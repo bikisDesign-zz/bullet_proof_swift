@@ -9,6 +9,18 @@
 import UIKit
 
 final class AuthenticateUserViewController: UIViewController {
-  // form
-  // button
+  
+  
+  lazy var form: UITableView = {
+    let tv = UITableView(frame: CGRect.zero)
+    tv.delegate = self
+    tv.register(FormTableViewCell.self, forCellReuseIdentifier: FormTableViewCell.reuseID)
+    return tv
+  }()
+  
+  
+  lazy var acceptButton: UIButton = {
+    let button = UIButton(frame: CGRect.zero)
+    
+  }()
 }
