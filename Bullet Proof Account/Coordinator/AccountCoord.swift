@@ -19,6 +19,7 @@ final class AccountCoordinator: NavigationCoordinator, NeedsDependency {
   
   override func start(with completion: @escaping () -> Void) {
     super.start(with: completion)
-    
+    let vc = AuthenticateUserViewController()
+    show(vc)
   }
 }

@@ -26,10 +26,10 @@ final class ApplicationCoordinator: NavigationCoordinator, NeedsDependency {
   
   
   override func start(with completion: @escaping () -> Void) {
-    
-    // init dependencies here
+    dependencies = AppDependency(networking: Networking())
     super.start(with: completion)
-    // create child coordinator here
-   
+    let accountCoord = AccountCoordinator(rootViewController: rootViewController)
+    accountCoord.dependencies = dependencies
+    startChild(coordinator: accountCoord)
   }
 }

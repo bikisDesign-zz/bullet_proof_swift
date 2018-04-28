@@ -13,46 +13,42 @@ final class AuthenticateUserViewController: UIViewController {
   
   lazy var form: UITableView = {
     let tv = UITableView(frame: CGRect.zero)
+    self.view.addSubview(tv)
+    tv.translatesAutoresizingMaskIntoConstraints = false
     tv.delegate = self
     tv.register(FormTableViewCell.self, forCellReuseIdentifier: FormTableViewCell.reuseID)
-    tv.translatesAutoresizingMaskIntoConstraints = false
     return tv
   }()
   
   
   lazy var acceptButton: AcceptButton = {
     let button = AcceptButton(frame: CGRect.zero)
+    self.view.addSubview(button)
+    button.translatesAutoresizingMaskIntoConstraints = false
     button.addTarget(self, action: #selector(onAcceptButtonTap), for: .touchUpInside)
     button.isEnabled = false
-    button.translatesAutoresizingMaskIntoConstraints = false
     return button
   }()
+
   
   override func loadView() {
     
     view = UIView()
     view.backgroundColor = UIColor.white
-  }
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
     
     let margins = view.layoutMarginsGuide
-    form.topAnchor.constraint(equalTo: margins.topAnchor, constant: view.frame.height / 16)
-    form.leadingAnchor.constraint(equalTo: margins.leadingAnchor)
-    form.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
-    form.heightAnchor.constraint(equalToConstant: 100)
-    // need heightAnchor
+    form.topAnchor.constraint(equalTo: margins.topAnchor, constant: view.frame.height / 16).isActive = true
+    form.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
+    form.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
+    form.heightAnchor.constraint(equalToConstant: 100).isActive = true
     
-    acceptButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -15)
-    acceptButton.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 15)
-    acceptButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 15)
-    acceptButton.heightAnchor.constraint(equalToConstant: 55)
     
-    view.addSubview(form)
-    view.addSubview(acceptButton)
+    acceptButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -15).isActive = true
+    acceptButton.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 15).isActive = true
+    acceptButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -15).isActive = true
+    acceptButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
+    acceptButton.backgroundColor = UIColor.black
   }
-  
   
   @objc private func onAcceptButtonTap(){
     
