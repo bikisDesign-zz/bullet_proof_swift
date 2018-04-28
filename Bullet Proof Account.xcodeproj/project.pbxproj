@@ -48,6 +48,8 @@
 		894CEFDE20951770001CC4A1 /* ActivityCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CEFDD20951770001CC4A1 /* ActivityCoordinator.swift */; };
 		894CEFE2209518AA001CC4A1 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CEFE1209518AA001CC4A1 /* Networking.swift */; };
 		894CEFE720951B4F001CC4A1 /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CEFE620951B4F001CC4A1 /* AppDependency.swift */; };
+		894CEFE920951E6E001CC4A1 /* AuthenticateUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CEFE820951E6E001CC4A1 /* AuthenticateUserVC.swift */; };
+		894CEFEC20951F08001CC4A1 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CEFEB20951F08001CC4A1 /* ForgotPasswordVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,8 @@
 		894CEFDD20951770001CC4A1 /* ActivityCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCoordinator.swift; sourceTree = "<group>"; };
 		894CEFE1209518AA001CC4A1 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		894CEFE620951B4F001CC4A1 /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
+		894CEFE820951E6E001CC4A1 /* AuthenticateUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateUserVC.swift; sourceTree = "<group>"; };
+		894CEFEB20951F08001CC4A1 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 			children = (
 				894CEF722095162E001CC4A1 /* AppDelegate.swift */,
 				894CEFE3209518B0001CC4A1 /* Model */,
+				894CEFEA20951E73001CC4A1 /* ViewController */,
 				894CEFE02095177F001CC4A1 /* Coordinator */,
 				894CEFDF20951777001CC4A1 /* Dependencies */,
 				894CEF922095164B001CC4A1 /* Includes */,
@@ -178,7 +183,6 @@
 		894CEF9D209516B1001CC4A1 /* Coordinating */ = {
 			isa = PBXGroup;
 			children = (
-				894CEFDB20951759001CC4A1 /* NeedsDependency.swift */,
 				894CEF96209516AD001CC4A1 /* Coordinating.swift */,
 				894CEF93209516AD001CC4A1 /* Coordinator.swift */,
 				894CEF94209516AD001CC4A1 /* NavigationCoordinator.swift */,
@@ -244,9 +248,19 @@
 			isa = PBXGroup;
 			children = (
 				894CEFE620951B4F001CC4A1 /* AppDependency.swift */,
+				894CEFDB20951759001CC4A1 /* NeedsDependency.swift */,
 				894CEFE1209518AA001CC4A1 /* Networking.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		894CEFEA20951E73001CC4A1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				894CEFE820951E6E001CC4A1 /* AuthenticateUserVC.swift */,
+				894CEFEB20951F08001CC4A1 /* ForgotPasswordVC.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,12 +377,14 @@
 				894CEFD22095170B001CC4A1 /* RegexRule.swift in Sources */,
 				894CEFDA2095170B001CC4A1 /* ZipCodeRule.swift in Sources */,
 				894CEFA5209516F6001CC4A1 /* ValidatorDictionary.swift in Sources */,
+				894CEFEC20951F08001CC4A1 /* ForgotPasswordVC.swift in Sources */,
 				894CEFD92095170B001CC4A1 /* MinLengthRule.swift in Sources */,
 				894CEFD62095170B001CC4A1 /* PasswordRule.swift in Sources */,
 				894CEFC82095170B001CC4A1 /* RequiredRule.swift in Sources */,
 				894CEFC32095170B001CC4A1 /* AlphaRule.swift in Sources */,
 				894CEF99209516AE001CC4A1 /* NavigationCoordinator.swift in Sources */,
 				894CEFA8209516F6001CC4A1 /* ValidationError.swift in Sources */,
+				894CEFE920951E6E001CC4A1 /* AuthenticateUserVC.swift in Sources */,
 				894CEFCE2095170B001CC4A1 /* FloatRule.swift in Sources */,
 				894CEF9B209516AE001CC4A1 /* Coordinating.swift in Sources */,
 				894CEFDC20951759001CC4A1 /* NeedsDependency.swift in Sources */,

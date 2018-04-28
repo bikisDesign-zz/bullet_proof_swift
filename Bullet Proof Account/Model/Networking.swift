@@ -24,8 +24,8 @@ final class Networking: NSObject {
   
   weak var delegate: NetworkingDelegate?
   
-  func perform(call toNetwork: Networking.Call, with credentials: Credentials) {
-    print("processing credentials: \(credentials)")
+  func perform(call toNetwork: Networking.Call, with credentials: Credentials?) {
+    credentials != nil ? print("processing credentials: \(credentials)") : print("fetching user's password")
     delegate?.networkAttempt(returned: ("success", 200), for: toNetwork)
   }
 }
