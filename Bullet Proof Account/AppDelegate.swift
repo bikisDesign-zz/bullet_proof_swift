@@ -10,12 +10,31 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+  
+  
   var window: UIWindow?
-
-
+  lazy var applicationCoord: ApplicationCoordinator = ApplicationCoordinator(rootViewController: UINavigationController())
+  
+  
+  func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+    
+    window = UIWindow(frame: UIScreen.main.bounds)
+    window?.rootViewController = applicationCoord.rootViewController
+    return true
+  }
+  
+  
+  func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    return true
+  }
+  
+  
+  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    
+    window?.makeKeyAndVisible()
+    applicationCoord.start {
+    }
     return true
   }
 }

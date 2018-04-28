@@ -53,6 +53,7 @@
 		894CEFF0209525A8001CC4A1 /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CEFEF209525A8001CC4A1 /* FormTableViewCell.swift */; };
 		894CEFF320952726001CC4A1 /* AcceptButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CEFF220952726001CC4A1 /* AcceptButton.swift */; };
 		894CEFF520952760001CC4A1 /* AcceptButtonVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CEFF420952760001CC4A1 /* AcceptButtonVM.swift */; };
+		894CEFF720952BBF001CC4A1 /* AccountCoord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CEFF620952BBF001CC4A1 /* AccountCoord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		894CEFEF209525A8001CC4A1 /* FormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
 		894CEFF220952726001CC4A1 /* AcceptButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptButton.swift; sourceTree = "<group>"; };
 		894CEFF420952760001CC4A1 /* AcceptButtonVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptButtonVM.swift; sourceTree = "<group>"; };
+		894CEFF620952BBF001CC4A1 /* AccountCoord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCoord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				894CEFDD20951770001CC4A1 /* ActivityCoordinator.swift */,
+				894CEFF620952BBF001CC4A1 /* AccountCoord.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				894CEFD42095170B001CC4A1 /* AlphaNumericRule.swift in Sources */,
 				894CEFD72095170B001CC4A1 /* Rule.swift in Sources */,
 				894CEFC42095170B001CC4A1 /* CharacterSetRule.swift in Sources */,
+				894CEFF720952BBF001CC4A1 /* AccountCoord.swift in Sources */,
 				894CEFD02095170B001CC4A1 /* PhoneNumberRule.swift in Sources */,
 				894CEFA9209516F6001CC4A1 /* Validator.swift in Sources */,
 				894CEF9C209516AE001CC4A1 /* UIKit-CoordinatingExtensions.swift in Sources */,

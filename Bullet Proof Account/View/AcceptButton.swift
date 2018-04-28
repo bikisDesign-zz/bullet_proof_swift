@@ -12,5 +12,5 @@ import UIKit
 
 final class AcceptButton: UIButton {
   
-  init(viewModel: )
+  
 }

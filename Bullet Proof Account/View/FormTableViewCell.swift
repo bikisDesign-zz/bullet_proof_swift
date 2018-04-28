@@ -18,18 +18,6 @@ final class FormTableViewCell: UITableViewCell {
   }()
   
   
-  override func editingRect(forBounds bounds: CGRect) -> CGRect {
-    return CGRect(x: bounds.origin.x + 5, y: bounds.origin.y,
-                  width: bounds.width - 10, height: bounds.height)
-  }
-  
-  
-  override func textRect(forBounds bounds: CGRect) -> CGRect {
-    return CGRect(x: bounds.origin.x + 5, y: bounds.origin.y,
-                  width: bounds.width - 10, height: bounds.height)
-  }
-  
-  
   func setView(){
     // update the reusable view here
   }

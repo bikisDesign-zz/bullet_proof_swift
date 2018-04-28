@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AcceptButtonViewModel {
-  var title: { get }
-  var backgroundColor: { get }
-  var textColor: { get }
+  var title: String { get }
+  var backgroundColor: UIColor { get }
+  var textColor: UIColor { get }
 }
