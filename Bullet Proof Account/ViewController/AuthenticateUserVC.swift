@@ -10,6 +10,7 @@ import UIKit
 
 final class AuthenticateUserViewController: UIViewController {
   
+  var datasource: UITableViewDataSource
   
   lazy var form: UITableView = {
     let tv = UITableView(frame: CGRect.zero)
@@ -31,8 +32,12 @@ final class AuthenticateUserViewController: UIViewController {
   }()
 
   
+  init(type: AccountType){
+    datasource = FormViewModel(type: type)
+  }
+  
+  
   override func loadView() {
-    
     view = UIView()
     view.backgroundColor = UIColor.white
     
@@ -50,14 +55,15 @@ final class AuthenticateUserViewController: UIViewController {
     acceptButton.backgroundColor = UIColor.black
   }
   
-  @objc private func onAcceptButtonTap(){
+  @objc
+  private func onAcceptButtonTap(){
     
   }
 }
 
 
 extension AuthenticateUserViewController: UITableViewDelegate {
-  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-    
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return FormViewModel.cellHeight
   }
 }

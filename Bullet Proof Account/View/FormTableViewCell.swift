@@ -14,11 +14,16 @@ final class FormTableViewCell: UITableViewCell {
   
   lazy var textField: UITextField = {
     let tf = UITextField(frame: CGRect.zero)
+    addSubview(tf)
     return tf
   }()
   
+  override func layoutSubviews() {
+    textField.frame = bounds
+  }
   
-  func setView(){
-    // update the reusable view here
+  func setView(for field: FormTextField){
+    textField.placeholder = field.placeholder
+    textField.textColor = field.textColor
   }
 }

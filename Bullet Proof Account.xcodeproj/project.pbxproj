@@ -54,6 +54,9 @@
 		894CEFF320952726001CC4A1 /* AcceptButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CEFF220952726001CC4A1 /* AcceptButton.swift */; };
 		894CEFF520952760001CC4A1 /* AcceptButtonVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CEFF420952760001CC4A1 /* AcceptButtonVM.swift */; };
 		894CEFF720952BBF001CC4A1 /* AccountCoord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CEFF620952BBF001CC4A1 /* AccountCoord.swift */; };
+		894CEFF9209533DD001CC4A1 /* FormVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CEFF8209533DD001CC4A1 /* FormVM.swift */; };
+		894CEFFB20953448001CC4A1 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CEFFA20953448001CC4A1 /* FormTextField.swift */; };
+		894CEFFE209538A2001CC4A1 /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CEFFD209538A2001CC4A1 /* AccountType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +121,9 @@
 		894CEFF220952726001CC4A1 /* AcceptButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptButton.swift; sourceTree = "<group>"; };
 		894CEFF420952760001CC4A1 /* AcceptButtonVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptButtonVM.swift; sourceTree = "<group>"; };
 		894CEFF620952BBF001CC4A1 /* AccountCoord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCoord.swift; sourceTree = "<group>"; };
+		894CEFF8209533DD001CC4A1 /* FormVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormVM.swift; sourceTree = "<group>"; };
+		894CEFFA20953448001CC4A1 /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
+		894CEFFD209538A2001CC4A1 /* AccountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				894CEF722095162E001CC4A1 /* AppDelegate.swift */,
+				894CEFFC20953890001CC4A1 /* ViewModel */,
 				894CEFE3209518B0001CC4A1 /* Model */,
 				894CEFEA20951E73001CC4A1 /* ViewController */,
 				894CEFF12095262D001CC4A1 /* View */,
@@ -258,9 +265,9 @@
 			isa = PBXGroup;
 			children = (
 				894CEFE620951B4F001CC4A1 /* AppDependency.swift */,
+				894CEFFD209538A2001CC4A1 /* AccountType.swift */,
 				894CEFDB20951759001CC4A1 /* NeedsDependency.swift */,
 				894CEFE1209518AA001CC4A1 /* Networking.swift */,
-				894CEFF420952760001CC4A1 /* AcceptButtonVM.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -281,6 +288,16 @@
 				894CEFEF209525A8001CC4A1 /* FormTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		894CEFFC20953890001CC4A1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				894CEFF420952760001CC4A1 /* AcceptButtonVM.swift */,
+				894CEFF8209533DD001CC4A1 /* FormVM.swift */,
+				894CEFFA20953448001CC4A1 /* FormTextField.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,6 +412,7 @@
 				894CEFCD2095170B001CC4A1 /* EmailRule.swift in Sources */,
 				894CEFCC2095170B001CC4A1 /* ISBNRule.swift in Sources */,
 				894CEFD12095170B001CC4A1 /* HexColorRule.swift in Sources */,
+				894CEFFB20953448001CC4A1 /* FormTextField.swift in Sources */,
 				894CEFD22095170B001CC4A1 /* RegexRule.swift in Sources */,
 				894CEFDA2095170B001CC4A1 /* ZipCodeRule.swift in Sources */,
 				894CEFF320952726001CC4A1 /* AcceptButton.swift in Sources */,
@@ -418,8 +436,10 @@
 				894CEFE2209518AA001CC4A1 /* Networking.swift in Sources */,
 				894CEFC52095170B001CC4A1 /* DateConvertable.swift in Sources */,
 				894CEFCF2095170B001CC4A1 /* ExactLengthRule.swift in Sources */,
+				894CEFF9209533DD001CC4A1 /* FormVM.swift in Sources */,
 				894CEFDE20951770001CC4A1 /* ActivityCoordinator.swift in Sources */,
 				894CEFC72095170B001CC4A1 /* ConfirmRule.swift in Sources */,
+				894CEFFE209538A2001CC4A1 /* AccountType.swift in Sources */,
 				894CEFE720951B4F001CC4A1 /* AppDependency.swift in Sources */,
 				894CEFA6209516F6001CC4A1 /* Validatable.swift in Sources */,
 				894CEFC62095170B001CC4A1 /* FullNameRule.swift in Sources */,

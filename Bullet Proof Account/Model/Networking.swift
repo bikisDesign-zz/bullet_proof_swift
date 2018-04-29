@@ -12,19 +12,15 @@ typealias Credentials = [String: Any]
 typealias Response = (String?, Int)
 
 protocol NetworkingDelegate: class {
-  func networkAttempt(returned response: Response, for call: Networking.Call)
+  func networkAttempt(returned response: Response, for call: AccountType)
 }
 
 
 final class Networking: NSObject {
   
-  enum Call {
-    case login, forgotPassword, signUp
-  }
-  
   weak var delegate: NetworkingDelegate?
   
-  func perform(call toNetwork: Networking.Call, with credentials: Credentials?) {
+  func perform(call toNetwork: AccountType, with credentials: Credentials?) {
     credentials != nil ? print("processing credentials: \(credentials)") : print("fetching user's password")
     delegate?.networkAttempt(returned: ("success", 200), for: toNetwork)
   }
