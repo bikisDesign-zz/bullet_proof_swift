@@ -30,6 +30,8 @@ final class ApplicationCoordinator: NavigationCoordinator, NeedsDependency {
     super.start(with: completion)
     let accountCoord = AccountCoordinator(rootViewController: rootViewController)
     accountCoord.dependencies = dependencies
-    startChild(coordinator: accountCoord)
+    startChild(coordinator: accountCoord) {
+      accountCoord.configure(for: .login)
+    }
   }
 }

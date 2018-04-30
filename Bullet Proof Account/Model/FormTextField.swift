@@ -11,12 +11,12 @@ import UIKit
 protocol FormTextField {
   var placeholder: String { get }
   var textColor: UIColor { get }
-  var validationRules: [Rule]? { get }
+  var validationRules: [Rule] { get }
   var keyboardType: UIKeyboardType { get }
 }
 
 extension FormTextField {
   var keyboardType: UIKeyboardType { return .default }
-  var textColor: UIColor { return UIColor.lightGray }
-  var validationRules: [Rule]? { return [RequiredRule()] }
+  var textColor: UIColor { return UIColor.darkGray }
+  var validationRules: [Rule] { return [RequiredRule()] }
 }

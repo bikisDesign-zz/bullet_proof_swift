@@ -10,6 +10,8 @@ import UIKit
 
 final class FormTableViewCell: UITableViewCell {
   
+  static let cellHeight: CGFloat = 65
+  
   static let reuseID: String = "FormTableViewCell"
   
   lazy var textField: UITextField = {
@@ -22,8 +24,9 @@ final class FormTableViewCell: UITableViewCell {
     textField.frame = bounds
   }
   
-  func setView(for field: FormTextField){
+  func setView(for field: FormTextField) -> UITextField {
     textField.placeholder = field.placeholder
     textField.textColor = field.textColor
+    return textField
   }
 }

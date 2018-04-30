@@ -264,6 +264,7 @@
 		894CEFE3209518B0001CC4A1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				894CEFFA20953448001CC4A1 /* FormTextField.swift */,
 				894CEFE620951B4F001CC4A1 /* AppDependency.swift */,
 				894CEFFD209538A2001CC4A1 /* AccountType.swift */,
 				894CEFDB20951759001CC4A1 /* NeedsDependency.swift */,
@@ -295,7 +296,6 @@
 			children = (
 				894CEFF420952760001CC4A1 /* AcceptButtonVM.swift */,
 				894CEFF8209533DD001CC4A1 /* FormVM.swift */,
-				894CEFFA20953448001CC4A1 /* FormTextField.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
