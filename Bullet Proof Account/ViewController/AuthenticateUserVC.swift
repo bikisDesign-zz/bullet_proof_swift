@@ -7,10 +7,16 @@
 //
 
 import UIKit
+protocol AuthenticateUserViewControllerDelegate: class {
+  func userProvidedValidated(credentials: Credentials, type: AccountType)
+  func updateResponder(to type: AccountType)
+}
 
-final class AuthenticateUserViewController: UIViewController {
+class AuthenticateUserViewController: UIViewController {
   
   var datasource: FormViewModel
+  
+  var delegate: AuthenticateUserViewControllerDelegate?
   
   lazy var form: UITableView = {
     let tv = UITableView(frame: CGRect.zero)
@@ -23,17 +29,39 @@ final class AuthenticateUserViewController: UIViewController {
   }()
   
   
-  lazy var acceptButton: AcceptButton = {
-    let button = AcceptButton(frame: CGRect.zero)
+  lazy var acceptButton: UIButton = self.buttonFactory(with: self.acceptButtonDatasource)
+  
+  private var acceptButtonDatasource: ButtonViewModel
+  
+  func buttonFactory(with viewModel: ButtonViewModel) -> UIButton {
+    let button = UIButton(frame: CGRect.zero)
+    button.setTitle(viewModel.styling.title, for: .normal)
     self.view.addSubview(button)
     button.translatesAutoresizingMaskIntoConstraints = false
-    button.addTarget(self, action: #selector(onAcceptButtonTap), for: .touchUpInside)
+    button.backgroundColor = viewModel.styling.backgroundColor
+    
+    switch viewModel {
+    case .login:
+      button.addTarget(self, action: #selector(onAcceptButtonTap), for: .touchUpInside)
+    case .forgotpass:
+      button.addTarget(self, action: #selector(onForgotPassTap), for: .touchUpInside)
+    case .signup:
+      button.addTarget(self, action: #selector(onSetupTap), for: .touchUpInside)
+    }
     return button
-  }()
-
+  }
+  
   
   init(type: AccountType){
     datasource = FormViewModel(type: type)
+    switch type {
+    case .login:
+      acceptButtonDatasource = ButtonViewModel.login
+    case .forgotPassword:
+      acceptButtonDatasource = ButtonViewModel.forgotpass
+    case .setup:
+      acceptButtonDatasource = ButtonViewModel.signup
+    }
     super.init(nibName: nil, bundle: nil)
     datasource.delegate = self
   }
@@ -55,20 +83,34 @@ final class AuthenticateUserViewController: UIViewController {
     acceptButton.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -15).isActive = true
     acceptButton.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 15).isActive = true
     acceptButton.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -15).isActive = true
-    acceptButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
-    acceptButton.backgroundColor = UIColor.black
+    acceptButton.heightAnchor.constraint(equalToConstant: ButtonViewModel.largeButtonHeight).isActive = true
   }
-
+  
   
   //MARK: Gesture Recognizers
+  @objc
+  private func onBackgroundTap(){
+    view.endEditing(true)
+  }
   @objc
   private func onAcceptButtonTap(){
     datasource.validateForm()
   }
-  
   @objc
-  private func onBackgroundTap(){
-    view.endEditing(true)
+  private func onForgotPassTap(){
+    guard datasource.type != .forgotPassword else {
+      datasource.validateForm()
+      return
+    }
+    delegate?.updateResponder(to: .forgotPassword)
+  }
+  @objc
+  private func onSetupTap(){
+    guard datasource.type != .setup else {
+      datasource.validateForm()
+      return
+    }
+    delegate?.updateResponder(to: .setup)
   }
 }
 
@@ -76,12 +118,24 @@ final class AuthenticateUserViewController: UIViewController {
 extension AuthenticateUserViewController: FormViewModelDelegate {
   func formWasValidated(_ successfully: ValidationCallback) {
     guard let errorMessage = successfully.1 else {
+      var credentials = Credentials()
+      for (index, key) in datasource.fields.enumerated() {
+        guard let cell = form.cellForRow(at: IndexPath(item: index, section: 0)) as? FormTableViewCell else { return }
+        credentials[key.apiKey] = cell.textField.text
+      }
       
+      delegate?.userProvidedValidated(credentials: credentials, type: datasource.type)
       return
     }
     
     let message = errorMessage.reduce(into: "", { $0 = "\($0 + "\n" + $1)" })
-    let alertVC = UIAlertController(title: "I", message: <#T##String?#>, preferredStyle: <#T##UIAlertControllerStyle#>)
+    let alertVC = UIAlertController(title: "Form Invalid",
+                                    message: message,
+                                    preferredStyle: .alert)
+    alertVC.addAction(UIAlertAction(title: "Rodger!",
+                                    style: .destructive,
+                                    handler: nil))
+    present(alertVC, animated: true, completion: nil)
   }
 }
 

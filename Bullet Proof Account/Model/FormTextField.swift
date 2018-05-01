@@ -9,6 +9,7 @@
 import UIKit
 
 protocol FormTextField {
+  var apiKey: String { get }
   var placeholder: String { get }
   var textColor: UIColor { get }
   var validationRules: [Rule] { get }
