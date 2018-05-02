@@ -125,7 +125,7 @@ extension AuthenticateUserViewController: FormViewModelDelegate {
         credentials[key.apiKey] = cell.textField.text
       }
       
-      delegate?.userProvidedValidated(credentials: credentials), type: datasource.type)
+      delegate?.userProvidedValidated(credentials: credentials, type: datasource.type)
       return
     }
     
