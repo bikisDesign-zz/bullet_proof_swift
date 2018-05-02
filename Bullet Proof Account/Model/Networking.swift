@@ -11,21 +11,11 @@ import Foundation
 typealias Credentials = [String: Any]
 typealias Response = (String?, Int)
 
-protocol NetworkingDelegate: class {
-  func networkAttempt(returned response: Response, for call: Networking.Call)
-}
-
 
 final class Networking: NSObject {
   
-  enum Call {
-    case login, forgotPassword, signUp
-  }
-  
-  weak var delegate: NetworkingDelegate?
-  
-  func perform(call toNetwork: Networking.Call, with credentials: Credentials?) {
-    credentials != nil ? print("processing credentials: \(credentials)") : print("fetching user's password")
-    delegate?.networkAttempt(returned: ("success", 200), for: toNetwork)
+  func perform(call toNetwork: AccountType, with credentials: Credentials?, callback: @escaping (Response) -> ()) {
+    credentials != nil ? print("processing credentials: \(credentials!)") : print("fetching user's password")
+    callback(("success", 200))
   }
 }

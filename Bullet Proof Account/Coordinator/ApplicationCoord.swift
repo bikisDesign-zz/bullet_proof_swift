@@ -1,8 +1,8 @@
 //
-//  ActivityCoordinator.swift
+//  ApplicationCoord.swift
 //  Bullet Proof Account
 //
-//  Created by Aaron bikis on 4/28/18.
+//  Created by Aaron bikis on 5/1/18.
 //  Copyright © 2018 Aaron bikis. All rights reserved.
 //
 
@@ -15,7 +15,7 @@ import UIKit
  * Initial state configuration
  * Network calls to retrieve neccesary information for the app state i.e.
  * determining network availability for unfinished tasks
-*/
+ */
 final class ApplicationCoordinator: NavigationCoordinator, NeedsDependency {
   var dependencies: AppDependency? {
     didSet {
@@ -26,9 +26,13 @@ final class ApplicationCoordinator: NavigationCoordinator, NeedsDependency {
   
   
   override func start(with completion: @escaping () -> Void) {
-    
-    // init dependencies here
+    dependencies = AppDependency(networking: Networking())
     super.start(with: completion)
-    // create child coordinator here
+    let accountCoord = AccountCoordinator(rootViewController: rootViewController)
+    accountCoord.dependencies = dependencies
+    startChild(coordinator: accountCoord) {
+      accountCoord.configure(for: .login)
+    }
   }
 }
+

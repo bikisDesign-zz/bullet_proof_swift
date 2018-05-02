@@ -10,27 +10,22 @@ import UIKit
 
 final class FormTableViewCell: UITableViewCell {
   
+  static let cellHeight: CGFloat = 65
+  
   static let reuseID: String = "FormTableViewCell"
   
   lazy var textField: UITextField = {
     let tf = UITextField(frame: CGRect.zero)
+    addSubview(tf)
     return tf
   }()
   
-  
-  override func editingRect(forBounds bounds: CGRect) -> CGRect {
-    return CGRect(x: bounds.origin.x + 5, y: bounds.origin.y,
-                  width: bounds.width - 10, height: bounds.height)
+  override func layoutSubviews() {
+    textField.frame = bounds
   }
   
-  
-  override func textRect(forBounds bounds: CGRect) -> CGRect {
-    return CGRect(x: bounds.origin.x + 5, y: bounds.origin.y,
-                  width: bounds.width - 10, height: bounds.height)
-  }
-  
-  
-  func setView(){
-    // update the reusable view here
+  func setView() {
+    // update this method after you've created the FormTextField model
   }
 }
+
