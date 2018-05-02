@@ -36,6 +36,7 @@ class AuthenticateUserViewController: UIViewController {
   func buttonFactory(with viewModel: ButtonViewModel) -> UIButton {
     let button = UIButton(frame: CGRect.zero)
     button.setTitle(viewModel.styling.title, for: .normal)
+    button.setTitleColor(viewModel.styling.textColor, for: .normal)
     self.view.addSubview(button)
     button.translatesAutoresizingMaskIntoConstraints = false
     button.backgroundColor = viewModel.styling.backgroundColor
@@ -124,7 +125,7 @@ extension AuthenticateUserViewController: FormViewModelDelegate {
         credentials[key.apiKey] = cell.textField.text
       }
       
-      delegate?.userProvidedValidated(credentials: credentials, type: datasource.type)
+      delegate?.userProvidedValidated(credentials: credentials), type: datasource.type)
       return
     }
     

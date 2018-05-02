@@ -31,17 +31,18 @@ enum ButtonViewModel {
 
 private struct LoginButtonStyle: ButtonStyling {
   var title: String = "Login"
-  var backgroundColor: UIColor = UIColor.green
+  var backgroundColor: UIColor = UIColor(hexString: "26C6DA")
 }
 
 private struct SignUpButtonStyle: ButtonStyling {
   var title: String = "SignUp"
-  var backgroundColor: UIColor = UIColor.red
+  var backgroundColor: UIColor = UIColor(hexString: "50E3C2")
 }
 
 private struct ForgotPasswordStyle: ButtonStyling {
-  var title: String = "Forgot Password?"
-  var backgroundColor: UIColor = UIColor.brown
+  var title: String = "Forgot Password"
+  var backgroundColor: UIColor = UIColor.white
+  var textColor: UIColor = UIColor(hexString: "4A4A4A")
 }
 
 protocol ButtonStyling {

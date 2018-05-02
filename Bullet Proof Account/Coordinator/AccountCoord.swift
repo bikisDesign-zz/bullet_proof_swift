@@ -24,14 +24,10 @@ final class AccountCoordinator: NavigationCoordinator, NeedsDependency {
   }
   
   private func createViewController(for type: AccountType) -> AuthenticateUserViewController {
-    switch type {
-    case .login:
+    guard type != .login else {
       return LoginViewController()
-    case .forgotPassword:
-      return AuthenticateUserViewController(type: .forgotPassword)
-    case .setup:
-      return AuthenticateUserViewController(type: .setup)
     }
+    return AuthenticateUserViewController(type: type)
   }
 }
 

@@ -56,6 +56,7 @@
 		894CEFFB20953448001CC4A1 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CEFFA20953448001CC4A1 /* FormTextField.swift */; };
 		894CEFFE209538A2001CC4A1 /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CEFFD209538A2001CC4A1 /* AccountType.swift */; };
 		894CF00E20992BC0001CC4A1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CF00D20992BC0001CC4A1 /* LoginVC.swift */; };
+		894CF012209937A0001CC4A1 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CF011209937A0001CC4A1 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		894CEFFA20953448001CC4A1 /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
 		894CEFFD209538A2001CC4A1 /* AccountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountType.swift; sourceTree = "<group>"; };
 		894CF00D20992BC0001CC4A1 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		894CF011209937A0001CC4A1 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 			children = (
 				894CEF9D209516B1001CC4A1 /* Coordinating */,
 				894CEFAA209516FB001CC4A1 /* SwiftValidator */,
+				894CF013209937A3001CC4A1 /* UI-Extension */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -295,6 +298,14 @@
 				894CEFF8209533DD001CC4A1 /* FormVM.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		894CF013209937A3001CC4A1 /* UI-Extension */ = {
+			isa = PBXGroup;
+			children = (
+				894CF011209937A0001CC4A1 /* UIColor.swift */,
+			);
+			path = "UI-Extension";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,6 +412,7 @@
 				894CEFA7209516F6001CC4A1 /* ValidationDelegate.swift in Sources */,
 				894CEFD42095170B001CC4A1 /* AlphaNumericRule.swift in Sources */,
 				894CEFD72095170B001CC4A1 /* Rule.swift in Sources */,
+				894CF012209937A0001CC4A1 /* UIColor.swift in Sources */,
 				894CEFC42095170B001CC4A1 /* CharacterSetRule.swift in Sources */,
 				894CEFF720952BBF001CC4A1 /* AccountCoord.swift in Sources */,
 				894CEFD02095170B001CC4A1 /* PhoneNumberRule.swift in Sources */,
