@@ -8,17 +8,26 @@
 
 import UIKit
 
-final class AuthenticateUserViewController: UIViewController {
+protocol AuthenticateUserViewControllerDelegate: class {
+  func userProvidedValidated(credentials: Credentials, type: AccountType)
+  func updateResponder(to type: AccountType)
+}
+
+class AuthenticateUserViewController: UIViewController {
   
   lazy var form: UITableView = {
     let tv = UITableView(frame: CGRect.zero)
     self.view.addSubview(tv)
     tv.translatesAutoresizingMaskIntoConstraints = false
     tv.delegate = self
+    tv.dataSource = self.datasource
     tv.register(FormTableViewCell.self, forCellReuseIdentifier: FormTableViewCell.reuseID)
     return tv
   }()
   
+  var datasource: FormViewModel
+  
+  var delegate: AuthenticateUserViewControllerDelegate?
   
   lazy var acceptButton: UIButton = self.buttonFactory(with: self.acceptButtonDatasource)
   
@@ -53,7 +62,9 @@ final class AuthenticateUserViewController: UIViewController {
     case .setup:
       acceptButtonDatasource = ButtonViewModel.signup
     }
+    datasource = FormViewModel(type: type)
     super.init(nibName: nil, bundle: nil)
+    datasource.delegate = self
   }
   required init?(coder aDecoder: NSCoder) { fatalError() }
   
@@ -84,15 +95,47 @@ final class AuthenticateUserViewController: UIViewController {
   }
   @objc
   private func onAcceptButtonTap(){
-    
+    datasource.validateForm()
   }
   @objc
   private func onForgotPassTap(){
-    
+    guard datasource.type != .forgotPassword else {
+      datasource.validateForm()
+      return
+    }
+    delegate?.updateResponder(to: .forgotPassword)
   }
   @objc
   private func onSetupTap(){
+    guard datasource.type != .setup else {
+      datasource.validateForm()
+      return
+    }
+    delegate?.updateResponder(to: .setup)
+  }
+}
+
+extension AuthenticateUserViewController: FormViewModelDelegate {
+  func formWasValidated(_ successfully: ValidationCallback) {
+    guard let errorMessage = successfully.1 else {
+      var credentials = Credentials()
+      for (index, key) in datasource.fields.enumerated() {
+        guard let cell = form.cellForRow(at: IndexPath(item: index, section: 0)) as? FormTableViewCell else { return }
+        credentials[key.apiKey] = cell.textField.text
+      }
+      
+      delegate?.userProvidedValidated(credentials: credentials, type: datasource.type)
+      return
+    }
     
+    let message = errorMessage.reduce(into: "", { $0 = "\($0 + "\n" + $1)" })
+    let alertVC = UIAlertController(title: "Form Invalid",
+                                    message: message,
+                                    preferredStyle: .alert)
+    alertVC.addAction(UIAlertAction(title: "Rodger!",
+                                    style: .destructive,
+                                    handler: nil))
+    present(alertVC, animated: true, completion: nil)
   }
 }
 

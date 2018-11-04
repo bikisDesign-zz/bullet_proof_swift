@@ -24,8 +24,10 @@ final class FormTableViewCell: UITableViewCell {
     textField.frame = bounds
   }
   
-  func setView() {
-    // update this method after you've created the FormTextField model
+  func setView(for field: FormTextField) -> UITextField {
+    textField.placeholder = field.placeholder
+    textField.textColor = field.textColor
+    return textField
   }
 }
 

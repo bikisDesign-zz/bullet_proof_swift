@@ -54,6 +54,9 @@
 		894CF01B20993D84001CC4A1 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CF01A20993D84001CC4A1 /* UIColor.swift */; };
 		894CF01D20993DCF001CC4A1 /* ApplicationCoord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CF01C20993DCF001CC4A1 /* ApplicationCoord.swift */; };
 		894CF01F20993DE6001CC4A1 /* AccountCoord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CF01E20993DE6001CC4A1 /* AccountCoord.swift */; };
+		8967892E209A4730007449BB /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8967892D209A4730007449BB /* FormTextField.swift */; };
+		89678930209A4747007449BB /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8967892F209A4747007449BB /* FormViewModel.swift */; };
+		89678932209A490A007449BB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89678931209A490A007449BB /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +121,9 @@
 		894CF01A20993D84001CC4A1 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		894CF01C20993DCF001CC4A1 /* ApplicationCoord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoord.swift; sourceTree = "<group>"; };
 		894CF01E20993DE6001CC4A1 /* AccountCoord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCoord.swift; sourceTree = "<group>"; };
+		8967892D209A4730007449BB /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
+		8967892F209A4747007449BB /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
+		89678931209A490A007449BB /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +269,7 @@
 				894CEFDB20951759001CC4A1 /* NeedsDependency.swift */,
 				894CEFE1209518AA001CC4A1 /* Networking.swift */,
 				894CF01720993D23001CC4A1 /* AccountType.swift */,
+				8967892D209A4730007449BB /* FormTextField.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -271,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				894CEFE820951E6E001CC4A1 /* AuthenticateUserVC.swift */,
+				89678931209A490A007449BB /* LoginVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -287,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				894CF01520993C23001CC4A1 /* ButtonVM.swift */,
+				8967892F209A4747007449BB /* FormViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -400,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				894CF01D20993DCF001CC4A1 /* ApplicationCoord.swift in Sources */,
+				8967892E209A4730007449BB /* FormTextField.swift in Sources */,
 				894CEF98209516AE001CC4A1 /* Coordinator.swift in Sources */,
 				894CEFA7209516F6001CC4A1 /* ValidationDelegate.swift in Sources */,
 				894CEFD42095170B001CC4A1 /* AlphaNumericRule.swift in Sources */,
@@ -418,6 +428,7 @@
 				894CEFA5209516F6001CC4A1 /* ValidatorDictionary.swift in Sources */,
 				894CEFD92095170B001CC4A1 /* MinLengthRule.swift in Sources */,
 				894CEFF0209525A8001CC4A1 /* FormTableViewCell.swift in Sources */,
+				89678930209A4747007449BB /* FormViewModel.swift in Sources */,
 				894CEFD62095170B001CC4A1 /* PasswordRule.swift in Sources */,
 				894CEFC82095170B001CC4A1 /* RequiredRule.swift in Sources */,
 				894CEFC32095170B001CC4A1 /* AlphaRule.swift in Sources */,
@@ -432,6 +443,7 @@
 				894CEFD82095170B001CC4A1 /* SSNRule.swift in Sources */,
 				894CEFCA2095170B001CC4A1 /* RoutingNumberRule.swift in Sources */,
 				894CEF732095162E001CC4A1 /* AppDelegate.swift in Sources */,
+				89678932209A490A007449BB /* LoginVC.swift in Sources */,
 				894CEFC92095170B001CC4A1 /* IPV4Rule.swift in Sources */,
 				894CEFE2209518AA001CC4A1 /* Networking.swift in Sources */,
 				894CEFC52095170B001CC4A1 /* DateConvertable.swift in Sources */,
